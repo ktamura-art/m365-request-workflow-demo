@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>依頼受付・進捗管理 業務デモ（Microsoft 365 標準機能）</title>
+<title>特注・別注依頼の受付 業務デモ（Microsoft 365 標準機能）</title>
 <style>
   :root{
     --blue:#0078d4; --blue-dark:#106ebe; --blue-pale:#eff6fc;
@@ -386,8 +386,8 @@
 <section class="view" id="v-before">
   <div class="narr">
     <h2>現状：Excel台帳＋メール催促<span class="bg bg-view">表示のみ</span></h2>
-    <p>依頼はメールや口頭で届き、担当者がExcel台帳へ転記します。誰が対応中かは台帳を開かないと分からず、催促は担当者の記憶頼みです。まずはこの状態を確認してください。</p>
-    <div class="tools"><span class="tool x">Excel（個人管理）</span><span class="tool x">メール</span><span class="tool x">口頭・電話</span></div>
+    <p>営業から「この特注はできますか」という相談がメール・電話で届き、技術側の担当者がExcel台帳に転記します。誰が検討中かは台帳を開かないと分からず、催促は営業からのメール頼みです。まずはこの状態を確認してください。</p>
+    <div class="tools"><span class="tool x">Excel（個人管理）</span><span class="tool x">メール</span><span class="tool x">電話</span></div>
     <div class="eff">
       <div><b>この画面の役割</b><span>現状の再現です。<u>クリックできる箇所はありません</u>（Excelのシートタブも動きません）</span></div>
       <div><b>ここで見ていただくこと</b><span>重複行・空欄の担当列・ファイル名の「_最新_v3_修正版」</span></div>
@@ -397,21 +397,21 @@
 
   <div class="xl">
     <div class="xlhead">
-      <span>依頼一覧</span>
-      <span class="xlname">依頼一覧_最新_v3_修正版（山本さん確認中）.xlsx</span>
+      <span>特注依頼一覧</span>
+      <span class="xlname">特注依頼一覧_最新_v3_修正版（山本さん確認中）.xlsx</span>
     </div>
     <div class="xltab"><span class="on">2026年8月</span><span>2026年7月</span><span>2026年6月</span><span>Sheet1</span></div>
     <div class="xlgrid">
       <table>
-        <thead><tr><th></th><th>A 受付日</th><th>B 依頼元</th><th>C 内容</th><th>D 希望期限</th><th>E 担当</th><th>F 状況</th><th>G 備考</th></tr></thead>
+        <thead><tr><th></th><th>A 受付日</th><th>B 依頼元</th><th>C 顧客・特注内容</th><th>D 回答期限</th><th>E 担当</th><th>F 状況</th><th>G 備考</th></tr></thead>
         <tbody>
-          <tr><td class="rn">2</td><td>8/3</td><td>生産技術部</td><td>治具図面の寸法変更</td><td>8/14</td><td>佐藤</td><td>対応中</td><td></td></tr>
-          <tr class="dup"><td class="rn">3</td><td>8/5</td><td>品質保証部</td><td>A型シリーズ 表示ラベル修正</td><td>8/12</td><td>鈴木</td><td>完了</td><td></td></tr>
-          <tr class="dup"><td class="rn">4</td><td>8/6</td><td>品質保証部</td><td>ラベル表示の修正依頼（再送）</td><td>8/12</td><td class="empty"></td><td class="empty"></td><td>3行目と同じ？</td></tr>
-          <tr><td class="rn">5</td><td>8/7</td><td>製造部</td><td>部材Bの供給元変更に伴う仕様確認</td><td>8/18</td><td class="empty"></td><td class="empty"></td><td>担当未定</td></tr>
-          <tr><td class="rn">6</td><td>8/11</td><td>営業部</td><td>顧客要望による寸法特注の可否</td><td>8/15</td><td>佐藤</td><td>対応中</td><td>急ぎ</td></tr>
-          <tr><td class="rn">7</td><td>8/12</td><td>設計部</td><td>試作品の追加手配</td><td>8/21</td><td class="empty"></td><td class="empty"></td><td></td></tr>
-          <tr><td class="rn">8</td><td>8/12</td><td>生産技術部</td><td>組立手順書の改訂</td><td>8/28</td><td>高橋</td><td>受付</td><td></td></tr>
+          <tr><td class="rn">2</td><td>8/3</td><td>代理店営業部</td><td>自動車D社：クリーンウェア C-110 丈詰め</td><td>8/14</td><td>高橋</td><td>回答済</td><td>見送り</td></tr>
+          <tr class="dup"><td class="rn">3</td><td>8/5</td><td>東日本営業部</td><td>建設A社：ヘルメット H-25 社名印刷（2色）</td><td>8/18</td><td class="empty"></td><td class="empty"></td><td></td></tr>
+          <tr class="dup"><td class="rn">4</td><td>8/6</td><td>東日本営業部</td><td>建設A社 ヘルメット 社名入れの件（再送）</td><td>8/18</td><td class="empty"></td><td class="empty"></td><td>3行目と同じ？</td></tr>
+          <tr><td class="rn">5</td><td>8/8</td><td>東日本営業部</td><td>化学F社：粉じん用マスク M-70 交換フィルタ仕様</td><td>8/20</td><td>佐藤</td><td>検討中</td><td></td></tr>
+          <tr><td class="rn">6</td><td>8/12</td><td>西日本営業部</td><td>物流E社：保護具セット化＋個別包装</td><td>9/8</td><td class="empty"></td><td class="empty"></td><td>担当未定</td></tr>
+          <tr><td class="rn">7</td><td>8/14</td><td>東日本営業部</td><td>食品C社：作業用シューズ A-200 白色・耐油仕様</td><td>8/28</td><td class="empty"></td><td class="empty"></td><td></td></tr>
+          <tr><td class="rn">8</td><td>8/15</td><td>官公庁営業部</td><td>G市：保護帽 H-25 あご紐仕様の変更</td><td>8/20</td><td>鈴木</td><td>検討中</td><td>入札あり・急ぎ</td></tr>
         </tbody>
       </table>
     </div>
@@ -419,31 +419,31 @@
 
   <div class="mails">
     <div class="mail">
-      <div class="mh2">品質保証部 → 開発管理部　8/10 9:12</div>
-      <div class="sub">Re: ラベル表示の修正について（３回目）</div>
-      <div class="bd">先週お送りした件、その後いかがでしょうか。期限が近づいており…</div>
+      <div class="mh2">東日本営業部 → 開発設計部　8/10 9:12</div>
+      <div class="sub">Re: 建設A社の社名印刷、お見積はまだでしょうか（3回目）</div>
+      <div class="bd">先方の社内決裁の締切が近く、回答をいただけないと他社に流れてしまいます…</div>
     </div>
     <div class="mail">
-      <div class="mh2">開発管理部 → 設計部　8/12 18:40</div>
-      <div class="sub">【リマインド】未対応案件のご確認をお願いします</div>
+      <div class="mh2">開発設計部 → 西日本営業部　8/12 18:40</div>
+      <div class="sub">【リマインド】未回答の特注案件のご確認をお願いします</div>
       <div class="bd">お手数ですが、台帳のE列・F列にご記入をお願いできますでしょうか…</div>
     </div>
     <div class="mail">
-      <div class="mh2">製造部 → 開発管理部　8/13 11:05</div>
-      <div class="sub">仕様確認の依頼、どちらに出せばよいでしょうか</div>
-      <div class="bd">前回はメールで送りましたが、今回は担当の方が不在のため…</div>
+      <div class="mh2">代理店営業部 → 開発設計部　8/13 11:05</div>
+      <div class="sub">以前も似た特注をやった記憶があるのですが、資料はどこですか</div>
+      <div class="bd">同じような丈詰めの案件を昨年やっていたはずで、その時の可否と単価を…</div>
     </div>
   </div>
 
   <div class="probs">
-    <div class="prob"><b>依頼が二重に登録される</b><span>メールと口頭で別々に届き、同じ依頼が別行になる</span></div>
+    <div class="prob"><b>同じ特注が二重に登録される</b><span>メールと電話で別々に届き、同じ相談が別行になる</span></div>
     <div class="prob"><b>最新版がどれか分からない</b><span>ファイル名に「_最新_v3_修正版」が積み上がる</span></div>
-    <div class="prob"><b>催促が人の記憶頼み</b><span>気づいた人が都度メールを書いている</span></div>
-    <div class="prob"><b>集計が毎月の手作業</b><span>件数・リードタイムを出すのに半日かかる</span></div>
+    <div class="prob"><b>催促が営業からのメール頼み</b><span>回答が遅れ、失注につながる</span></div>
+    <div class="prob"><b>過去の類似特注が探せない</b><span>毎回ゼロから検討し、単価もばらつく</span></div>
   </div>
 
   <div class="cta">
-    <button onclick="go('form')">② 依頼フォームへ進む →</button>
+    <button onclick="go('form')">② 特注依頼フォームへ進む →</button>
     <p>上部のタブ、下部の「次へ →」、キーボードの ←→ でも移動できます</p>
   </div>
 </section>
@@ -451,50 +451,57 @@
 <!-- ============ 2. FORM ============ -->
 <section class="view" id="v-form">
   <div class="narr">
-    <h2>受付：依頼フォーム<span class="bg bg-int">操作できます</span></h2>
-    <p>依頼元の各部署は、このフォームから依頼を出します。スマートフォンからも入力でき、必須項目が埋まっていないと送信できないため、記入漏れによる差し戻しが起きません。実際に送信してみてください。</p>
+    <h2>受付：特注依頼フォーム<span class="bg bg-int">操作できます</span></h2>
+    <p>営業が特注の相談を出す入口です。顧客・対象品番・数量・回答期限が必須なので、「情報が足りなくて検討に入れない」が起きません。スマートフォンからも入力でき、客先で聞いたその場で送れます。実際に送信してみてください。</p>
     <div class="tools"><span class="tool">Microsoft Forms</span><span class="tool">Power Apps でも可</span><span class="tool">標準ライセンス</span></div>
     <div class="eff">
-      <div><b>なくなる作業</b><span><s>依頼内容の聞き直し・記入不備の差し戻し</s></span></div>
-      <div><b>削減の見込み</b><span>月13件（不備3割）× 8分 ＝ <span class="hi">約1.7時間／月</span></span></div>
-      <div><b>効く相手</b><span>依頼元の各部署（何を書けばよいか迷わなくなる）</span></div>
+      <div><b>なくなる作業</b><span><s>情報不足の聞き直し・差し戻し</s></span></div>
+      <div><b>削減の見込み</b><span>月11件（不備3割）× 8分 ＝ <span class="hi">約1.5時間／月</span></span></div>
+      <div><b>効く相手</b><span>営業（何を伝えれば検討が始まるかが決まる）</span></div>
     </div>
   </div>
 
   <div class="formstage">
     <div class="phone">
-      <div class="phbar">forms.office.com — 依頼受付フォーム</div>
+      <div class="phbar">forms.office.com — 特注依頼フォーム</div>
       <div id="formArea">
         <div class="fhero">
-          <div class="ft">開発管理部 依頼受付フォーム</div>
-          <div class="fs">設計変更・試作・仕様確認などのご依頼はこちらから</div>
+          <div class="ft">特注・別注 依頼フォーム</div>
+          <div class="fs">サイズ特注・名入れ・仕様変更のご相談はこちらから</div>
         </div>
         <div class="fbody">
           <div class="fq">
-            <label>依頼区分<span class="req">*</span></label>
+            <label>特注区分<span class="req">*</span></label>
             <select id="f-kind">
-              <option>設計変更依頼</option><option>試作依頼</option>
-              <option>不具合報告</option><option>仕様確認</option><option>改善提案</option>
+              <option>表示・刺繍・印刷</option><option>サイズ・寸法特注</option>
+              <option>色・素材変更</option><option>機能追加・仕様変更</option><option>セット・梱包変更</option>
             </select>
           </div>
           <div class="fq">
-            <label>依頼元部署<span class="req">*</span></label>
+            <label>依頼元<span class="req">*</span></label>
             <select id="f-dept">
-              <option>生産技術部</option><option>品質保証部</option><option>製造部</option>
-              <option>営業部</option><option>設計部</option>
+              <option>東日本営業部</option><option>西日本営業部</option>
+              <option>官公庁営業部</option><option>代理店営業部</option><option>海外営業部</option>
             </select>
           </div>
           <div class="fq">
-            <label>件名<span class="req">*</span></label>
-            <input id="f-title" type="text" value="部材Bの供給元変更に伴う仕様確認">
+            <label>顧客<span class="req">*</span></label>
+            <select id="f-cust">
+              <option>建設A社</option><option>電機B社</option><option>食品C社</option>
+              <option>自動車D社</option><option>物流E社</option><option>化学F社</option><option>G市（官公庁）</option>
+            </select>
           </div>
           <div class="fq">
-            <label>依頼内容</label>
-            <textarea id="f-body">供給元の変更に伴い、部材Bの寸法公差が現行仕様に収まるかご確認をお願いします。現行図面を添付します。</textarea>
+            <label>対象品番・特注内容<span class="req">*</span></label>
+            <input id="f-title" type="text" value="作業服 W-320 社名刺繍＋号車番号">
           </div>
           <div class="fq">
-            <label>希望期限<span class="req">*</span></label>
-            <input id="f-due" type="date" value="2026-08-28">
+            <label>想定数量<span class="req">*</span></label>
+            <input id="f-qty" type="text" value="120 着">
+          </div>
+          <div class="fq">
+            <label>客先への回答期限<span class="req">*</span></label>
+            <input id="f-due" type="date" value="2026-08-26">
           </div>
           <div class="fq">
             <label>優先度<span class="req">*</span></label>
@@ -510,14 +517,14 @@
     <div class="sidenote">
       <h3>この画面で起きていること</h3>
       <div class="kv">
-        <div><b>入力チェック</b><span>必須項目・日付形式をフォーム側で担保。不備のある依頼が入り口で止まります</span></div>
-        <div><b>受付経路の一本化</b><span>メール・口頭・電話が混在していた受付を1か所に集約します</span></div>
-        <div><b>添付ファイル</b><span>図面・写真をそのまま添付でき、依頼と一緒に保存されます</span></div>
+        <div><b>検討の前提を確保</b><span>顧客・品番・数量・回答期限が揃った状態で技術に届きます</span></div>
+        <div><b>受付経路の一本化</b><span>メール・電話・口頭で入っていた相談を1か所に集約します</span></div>
+        <div><b>添付ファイル</b><span>客先図面・ロゴデータ・サンプル写真をそのまま添付できます</span></div>
         <div><b>構築の手間</b><span>この画面はドラッグ操作のみ。所要 約30分（コード記述なし）</span></div>
       </div>
       <div class="callout">
         <b>送信するとどうなるか</b>
-        送信と同時に、依頼番号の自動採番・台帳への登録・担当チャネルへの通知・期限リマインドの予約が走ります。次の画面でその流れを追います。
+        依頼番号の自動採番・台帳への登録・技術チャネルへの通知・<b>同じ品番の過去の特注実績の検索</b>・回答期限リマインドの予約が、まとめて走ります。次の画面でその流れを追います。
       </div>
     </div>
   </div>
@@ -526,50 +533,52 @@
 <!-- ============ 3. TEAMS ============ -->
 <section class="view" id="v-teams">
   <div class="narr">
-    <h2>通知：担当チャネルへ自動投稿<span class="bg bg-int">ボタンが押せます</span></h2>
-    <p>送信から数秒で、担当チームのチャネルに依頼カードが届きます。誰も転記していません。優先度「高」の依頼は担当者へのメンションが付きます。</p>
+    <h2>通知：技術チャネルへ自動投稿<span class="bg bg-int">ボタンが押せます</span></h2>
+    <p>送信から数秒で、技術担当のチャネルに依頼カードが届きます。誰も転記していません。<b>同じ品番の過去の特注実績もカードに添えて出す</b>ので、「前にもやった気がする」を毎回ゼロから調べ直さずに済みます。</p>
     <div class="tools"><span class="tool">Microsoft Teams</span><span class="tool">Power Automate</span></div>
     <div class="eff">
-      <div><b>なくなる作業</b><span><s>「誰が拾ったか」の確認・進捗の問い合わせ対応</s></span></div>
-      <div><b>削減の見込み</b><span>月20件 × 5分 ＝ <span class="hi">約1.7時間／月</span></span></div>
-      <div><b>効く相手</b><span>受付の一次対応をしている方（開発管理部）</span></div>
+      <div><b>なくなる作業</b><span><s>「誰が見るか」の確認</s>／<s>過去の類似特注を探す時間</s></span></div>
+      <div><b>削減の見込み</b><span>問い合わせ対応 1.7時間 ＋ 過去実績の検索 2.5時間 ＝ <span class="hi">約4.2時間／月</span></span></div>
+      <div><b>効く相手</b><span>技術の担当者（検討の初動が速くなる）</span></div>
     </div>
   </div>
 
   <div class="tmswrap">
     <div class="tmsnav">
       <div class="h">チーム</div>
-      <a href="#" onclick="return false">開発管理部</a>
-      <a class="on" href="#" onclick="return false"><span class="dot"></span>依頼受付</a>
-      <a href="#" onclick="return false">設計変更検討</a>
+      <a href="#" onclick="return false">開発設計部</a>
+      <a class="on" href="#" onclick="return false"><span class="dot"></span>特注依頼</a>
+      <a href="#" onclick="return false">量産移行検討</a>
       <a href="#" onclick="return false">試作進行</a>
       <a href="#" onclick="return false">全社連絡</a>
     </div>
     <div class="tmsmain">
       <div class="tmshead">
-        <div class="ic">依</div>
-        <b>依頼受付</b><span>／ 開発管理部</span>
+        <div class="ic">特</div>
+        <b>特注依頼</b><span>／ 開発設計部</span>
       </div>
       <div class="msg">
         <div class="bot">⚡</div>
         <div class="body">
-          <div class="mh"><b>依頼受付フロー</b><span class="tagbot">アプリ</span><span class="tm" id="tms-time">たった今</span></div>
+          <div class="mh"><b>特注依頼フロー</b><span class="tagbot">アプリ</span><span class="tm" id="tms-time">たった今</span></div>
           <div class="acard">
             <div class="top"></div>
             <div class="inner">
-              <h4 id="tms-title">新しい依頼が登録されました</h4>
-              <div class="meta" id="tms-no">REQ-2026-0143</div>
-              <div class="afield"><b>依頼区分</b><span id="tms-kind">仕様確認</span></div>
-              <div class="afield"><b>依頼元</b><span id="tms-dept">製造部</span></div>
-              <div class="afield"><b>件名</b><span id="tms-subj">部材Bの供給元変更に伴う仕様確認</span></div>
-              <div class="afield"><b>希望期限</b><span id="tms-due">2026/08/28（残り9日）</span></div>
+              <h4 id="tms-title">新しい特注依頼が登録されました</h4>
+              <div class="meta" id="tms-no">SP-2026-0143</div>
+              <div class="afield"><b>特注区分</b><span id="tms-kind">表示・刺繍・印刷</span></div>
+              <div class="afield"><b>依頼元</b><span id="tms-dept">東日本営業部</span></div>
+              <div class="afield"><b>顧客・品番</b><span id="tms-subj">建設A社：作業服 W-320 社名刺繍</span></div>
+              <div class="afield"><b>想定数量</b><span id="tms-qty">120 着</span></div>
+              <div class="afield"><b>回答期限</b><span id="tms-due">2026/08/26（残り7日）</span></div>
               <div class="afield"><b>優先度</b><span id="tms-pri">中</span></div>
+              <div class="afield"><b>過去の類似特注</b><span><b>2件</b>（SP-2025-0982／SP-2024-0771）　← 自動で検索しました</span></div>
               <div class="afield"><b>担当</b><span>未割当　← このカードから割当できます</span></div>
             </div>
             <div class="acts">
               <button class="btn pri" onclick="go('list')">台帳で開く</button>
               <button class="btn" onclick="go('list')">自分が担当する</button>
-              <button class="btn">期限の相談</button>
+              <button class="btn">過去の類似特注を見る</button>
             </div>
           </div>
           <div class="reply">返信を入力…</div>
@@ -580,19 +589,19 @@
 
   <div class="callout" style="max-width:none">
     <b>ここがポイント</b>
-    「メールを見落とす」「誰が拾ったか分からない」が構造的に起きません。カードは受付済みの記録そのものなので、後から検索もできます。
+    「メールを見落とす」「誰が拾ったか分からない」が構造的に起きません。さらに過去実績が最初から添えられているので、可否と単価の判断が前回を踏まえた形になり、担当者によるばらつきが減ります。
   </div>
 </section>
 
 <!-- ============ 4. LIST ============ -->
 <section class="view" id="v-list">
   <div class="narr">
-    <h2>台帳：SharePoint リスト<span class="bg bg-int">操作できます</span></h2>
-    <p>Excel台帳の置き換えです。依頼番号は自動採番、同時編集・変更履歴・権限管理が標準で効きます。ステータスを変更すると、次のダッシュボードの数字が動きます。</p>
+    <h2>台帳：特注依頼リスト<span class="bg bg-int">操作できます</span></h2>
+    <p>Excel台帳の置き換えです。依頼番号は自動採番、同時編集・変更履歴・権限管理が標準で効きます。<b>下の「⚡ 自動入力を再生」を押すと、フローが9項目を1つずつ書き込む様子が見られます。</b>ステータスを変更すると、⑥ダッシュボードの数字が動きます。</p>
     <div class="tools"><span class="tool">SharePoint リスト</span><span class="tool">標準ライセンス</span><span class="tool">脱・個人Excel</span></div>
     <div class="eff">
-      <div><b>なくなる作業</b><span><s>Excel台帳への転記</s>／<s>版の管理・ファイルの所在確認</s></span></div>
-      <div><b>削減の見込み</b><span>転記2.8時間 ＋ 版管理2.0時間 ＝ <span class="hi">約4.8時間／月</span></span></div>
+      <div><b>なくなる作業</b><span><s>Excel台帳への転記</s>／<s>版の管理</s></span></div>
+      <div><b>削減の見込み</b><span>転記 月38件 × 4分 ＝ <span class="hi">約2.5時間／月</span></span></div>
       <div><b>効く相手</b><span>台帳を抱えている担当者（属人化の解消）</span></div>
     </div>
   </div>
@@ -602,8 +611,8 @@
   <div class="app">
     <div class="apphead">
       <div class="appicon" style="background:#038387">リ</div>
-      <div><div class="t">依頼管理台帳</div></div>
-      <div class="s">／ 開発管理部サイト　▸　すべてのアイテム</div>
+      <div><div class="t">特注依頼台帳</div></div>
+      <div class="s">／ 開発設計部サイト　▸　すべてのアイテム</div>
     </div>
     <div class="cmdbar">
       <div class="cmd"><i>＋</i>新規</div>
@@ -616,18 +625,18 @@
     <div class="chips" id="chips">
       <span class="lb">絞り込み</span>
       <span class="chip on" data-f="all">すべて</span>
-      <span class="chip" data-f="未対応">未対応のみ</span>
-      <span class="chip" data-f="期限">期限が近い・超過</span>
+      <span class="chip" data-f="未回答">未回答のみ</span>
+      <span class="chip" data-f="期限">回答期限が近い・超過</span>
       <span class="chip" data-f="高">優先度 高</span>
       <button class="replay" id="replayBtn" onclick="playFill()">⚡ 自動入力を再生</button>
       <span class="cnt" id="listcnt" style="margin-left:14px"></span>
     </div>
     <div style="overflow-x:auto">
-      <table style="min-width:1020px">
+      <table style="min-width:1060px">
         <thead>
           <tr>
-            <th>依頼No</th><th>依頼区分</th><th>件名</th><th>依頼元</th>
-            <th>受付日</th><th>希望期限</th><th>優先度</th><th>ステータス</th><th>担当者</th>
+            <th>依頼No</th><th>特注区分</th><th>顧客・特注内容</th><th>依頼元</th>
+            <th>受付日</th><th>回答期限</th><th>優先度</th><th>ステータス</th><th>担当者</th>
           </tr>
         </thead>
         <tbody id="listbody"></tbody>
@@ -637,7 +646,7 @@
 
   <div class="callout" style="max-width:none">
     <b>Excel台帳との違い</b>
-    ファイルを開いて閉じる必要がなく、「どれが最新か」が存在しません。列の追加も画面上の操作だけで、依頼元の部署には自分が出した依頼だけを見せる、といった権限設定もできます。
+    ファイルを開いて閉じる必要がなく、「どれが最新か」が存在しません。過去の特注も同じ列に蓄積されるので、品番で検索すれば前回の可否・単価・納期がすぐ出てきます。営業には自分が出した依頼だけを見せる、という権限設定もできます。
   </div>
 </section>
 
@@ -648,9 +657,9 @@
     <p>ここまでの動きを作っている本体です。ブロックをクリックすると設定が開きます。<b>コードは1行もありません</b> — この画面をご担当者が読めて直せる状態が、内製化のゴールです。</p>
     <div class="tools"><span class="tool">Power Automate</span><span class="tool">標準コネクタのみ</span><span class="tool">構築 約2時間</span></div>
     <div class="eff">
-      <div><b>なくなる作業</b><span><s>催促メールの作成・送信</s>／<s>期限の見張り</s></span></div>
-      <div><b>削減の見込み</b><span>月30回 × 5分 ＝ <span class="hi">約2.5時間／月</span></span></div>
-      <div><b>効く相手</b><span>催促する側と、される側の両方（心理的な負担が消えます）</span></div>
+      <div><b>なくなる作業</b><span><s>回答期限の見張り</s>／<s>営業からの催促対応</s></span></div>
+      <div><b>削減の見込み</b><span>月25回 × 5分 ＝ <span class="hi">約2.1時間／月</span></span></div>
+      <div><b>効く相手</b><span>催促する営業と、される技術の両方</span></div>
     </div>
   </div>
 
@@ -662,7 +671,7 @@
         <div class="chev">▶</div>
       </div>
       <div class="nd">
-        <div class="row"><b>フォームID</b><span><code>開発管理部 依頼受付フォーム</code></span></div>
+        <div class="row"><b>フォームID</b><span><code>特注・別注 依頼フォーム</code></span></div>
         <div class="row"><b>実行タイミング</b><span>フォーム送信の直後（数秒以内）</span></div>
       </div>
     </div>
@@ -675,19 +684,20 @@
         <div class="chev">▶</div>
       </div>
       <div class="nd">
-        <div class="row"><b>取得項目</b><span>依頼区分／依頼元部署／件名／依頼内容／希望期限／優先度／添付</span></div>
+        <div class="row"><b>取得項目</b><span>特注区分／依頼元／顧客／対象品番・内容／想定数量／回答期限／優先度／添付</span></div>
       </div>
     </div>
     <div class="fconn"></div>
 
     <div class="fnode" onclick="this.classList.toggle('open')">
+      <div class="ni" style="display:none"></div>
       <div class="nh">
         <div class="ni" style="background:#038387">＃</div>
         <div class="nt"><b>依頼番号を採番する</b><span>アクション ／ 変数の設定</span></div>
         <div class="chev">▶</div>
       </div>
       <div class="nd">
-        <div class="row"><b>書式</b><span><code>REQ-{年}-{連番4桁}</code></span></div>
+        <div class="row"><b>書式</b><span><code>SP-{年}-{連番4桁}</code></span></div>
         <div class="row"><b>連番の取得</b><span>台帳の最終アイテムから採番（重複しない仕組み）</span></div>
       </div>
     </div>
@@ -700,9 +710,22 @@
         <div class="chev">▶</div>
       </div>
       <div class="nd">
-        <div class="row"><b>リスト</b><span><code>依頼管理台帳</code></span></div>
+        <div class="row"><b>リスト</b><span><code>特注依頼台帳</code></span></div>
         <div class="row"><b>ステータス</b><span>「受付済」を初期値として設定</span></div>
-        <div class="row"><b>添付</b><span>フォームの添付ファイルをそのまま引き継ぎ</span></div>
+        <div class="row"><b>添付</b><span>客先図面・ロゴデータをそのまま引き継ぎ</span></div>
+      </div>
+    </div>
+    <div class="fconn"></div>
+
+    <div class="fnode" onclick="this.classList.toggle('open')">
+      <div class="nh">
+        <div class="ni" style="background:#038387">🔍</div>
+        <div class="nt"><b>同じ品番の過去の特注を検索する</b><span>アクション ／ SharePoint（複数の項目の取得）</span></div>
+        <div class="chev">▶</div>
+      </div>
+      <div class="nd">
+        <div class="row"><b>抽出条件</b><span><code>対象品番 が一致 かつ ステータス が「受注」または「見送り」</code></span></div>
+        <div class="row"><b>使い道</b><span>前回の可否・単価・納期を通知カードに添える。毎回ゼロから調べ直さないための工程です</span></div>
       </div>
     </div>
     <div class="fconn"></div>
@@ -710,19 +733,19 @@
     <div class="fnode" onclick="this.classList.toggle('open')">
       <div class="nh">
         <div class="ni" style="background:#8661c5">◇</div>
-        <div class="nt"><b>条件：優先度は「高」か</b><span>コントロール ／ 条件分岐</span></div>
+        <div class="nt"><b>条件：優先度「高」または官公庁案件か</b><span>コントロール ／ 条件分岐</span></div>
         <div class="chev">▶</div>
       </div>
       <div class="nd">
-        <div class="row"><b>条件式</b><span><code>優先度 is equal to 高</code></span></div>
-        <div class="row"><b>目的</b><span>急ぎの依頼だけメンションを飛ばし、通知の慣れを防ぐ</span></div>
+        <div class="row"><b>条件式</b><span><code>優先度 = 高 or 依頼元 = 官公庁営業部</code></span></div>
+        <div class="row"><b>目的</b><span>入札や大口の案件だけメンションを飛ばし、通知の慣れを防ぐ</span></div>
       </div>
     </div>
     <div class="fconn"></div>
 
     <div class="fbranch">
       <div class="col">
-        <div class="bl yes">はい（優先度 高）</div>
+        <div class="bl yes">はい（急ぎ・大口）</div>
         <div class="fnode" onclick="this.classList.toggle('open')">
           <div class="nh">
             <div class="ni" style="background:#5b5fc7">＠</div>
@@ -730,7 +753,7 @@
             <div class="chev">▶</div>
           </div>
           <div class="nd">
-            <div class="row"><b>宛先</b><span>チャネル「依頼受付」＋ 当番担当者へメンション</span></div>
+            <div class="row"><b>宛先</b><span>チャネル「特注依頼」＋ 当番担当者へメンション</span></div>
           </div>
         </div>
       </div>
@@ -743,7 +766,7 @@
             <div class="chev">▶</div>
           </div>
           <div class="nd">
-            <div class="row"><b>宛先</b><span>チャネル「依頼受付」（メンションなし）</span></div>
+            <div class="row"><b>宛先</b><span>チャネル「特注依頼」（メンションなし）</span></div>
           </div>
         </div>
       </div>
@@ -753,13 +776,13 @@
     <div class="fnode" onclick="this.classList.toggle('open')">
       <div class="nh">
         <div class="ni" style="background:#d83b01">⏰</div>
-        <div class="nt"><b>期限の3営業日前にリマインドする</b><span>別フロー ／ スケジュール実行（毎朝8時）</span></div>
+        <div class="nt"><b>回答期限の2営業日前にリマインドする</b><span>別フロー ／ スケジュール実行（毎朝8時）</span></div>
         <div class="chev">▶</div>
       </div>
       <div class="nd">
-        <div class="row"><b>対象</b><span>ステータスが「完了」以外 かつ 希望期限まで3営業日以内</span></div>
-        <div class="row"><b>通知先</b><span>担当者（未割当の場合は開発管理部のチャネル）</span></div>
-        <div class="row"><b>効果</b><span>「催促する仕事」そのものが無くなります</span></div>
+        <div class="row"><b>対象</b><span>ステータスが「受付済」「技術検討中」 かつ 回答期限まで2営業日以内</span></div>
+        <div class="row"><b>通知先</b><span>担当者と依頼元の営業（未割当の場合は開発設計部のチャネル）</span></div>
+        <div class="row"><b>効果</b><span>「回答が遅れて失注する」を仕組みで防ぎます</span></div>
       </div>
     </div>
   </div>
@@ -769,10 +792,10 @@
     <table>
       <thead><tr><th>開始時刻</th><th>状態</th><th>所要</th><th>トリガー元</th></tr></thead>
       <tbody>
-        <tr><td id="log-time">たった今</td><td><span class="ok-ic">✓ 成功</span></td><td>3 秒</td><td id="log-src">依頼受付フォーム（製造部）</td></tr>
-        <tr><td>8/18 14:22</td><td><span class="ok-ic">✓ 成功</span></td><td>2 秒</td><td>依頼受付フォーム（営業部）</td></tr>
-        <tr><td>8/18 11:07</td><td><span class="ok-ic">✓ 成功</span></td><td>4 秒</td><td>依頼受付フォーム（品質保証部）</td></tr>
-        <tr><td>8/18 08:00</td><td><span class="ok-ic">✓ 成功</span></td><td>11 秒</td><td>期限リマインド（スケジュール）</td></tr>
+        <tr><td id="log-time">たった今</td><td><span class="ok-ic">✓ 成功</span></td><td>3 秒</td><td id="log-src">特注依頼フォーム（東日本営業部）</td></tr>
+        <tr><td>8/18 14:22</td><td><span class="ok-ic">✓ 成功</span></td><td>2 秒</td><td>特注依頼フォーム（西日本営業部）</td></tr>
+        <tr><td>8/18 11:07</td><td><span class="ok-ic">✓ 成功</span></td><td>4 秒</td><td>特注依頼フォーム（官公庁営業部）</td></tr>
+        <tr><td>8/18 08:00</td><td><span class="ok-ic">✓ 成功</span></td><td>9 秒</td><td>回答期限リマインド（スケジュール）</td></tr>
       </tbody>
     </table>
   </div>
@@ -782,68 +805,72 @@
 <section class="view" id="v-bi">
   <div class="narr">
     <h2>可視化：ダッシュボード<span class="bg bg-view">④の変更が反映されます</span></h2>
-    <p>台帳がそのままデータソースになるので、集計作業は発生しません。前の画面でステータスを変えた結果がここに反映されています。この画面が、上申資料に貼る「効果の証拠」になります。</p>
+    <p>台帳がそのままデータソースになるので、集計作業は発生しません。④でステータスを変えた結果がここに反映されています。<b>受注率と回答リードタイム</b>が見えるのが、この業務でのいちばんの価値です。</p>
     <div class="tools"><span class="tool">Power BI</span><span class="tool">自動更新</span><span class="tool">手作業の集計ゼロ</span></div>
     <div class="eff">
-      <div><b>なくなる作業</b><span><s>月次の集計・レポート作成</s></span></div>
-      <div><b>削減の見込み</b><span>半日 → 0 ＝ <span class="hi">約4.0時間／月</span></span></div>
-      <div><b>効く相手</b><span>報告する方と、報告を待っている方</span></div>
+      <div><b>なくなる作業</b><span><s>月次の集計・受注率レポート作成</s></span></div>
+      <div><b>削減の見込み</b><span>半日 → 0 ＝ <span class="hi">約3.0時間／月</span></span></div>
+      <div><b>効く相手</b><span>営業部門と技術部門の両方（判断の材料になる）</span></div>
     </div>
   </div>
 
   <div class="bihead">
     <div class="appicon" style="background:#f2c811; color:#323130">BI</div>
-    <div><b>依頼受付・進捗ダッシュボード</b></div>
+    <div><b>特注依頼・回答状況ダッシュボード</b></div>
     <div class="s">／ データ更新：本日 8:00（自動）</div>
   </div>
   <div class="bicanvas">
     <div class="kpi">
-      <div class="lb">当月の受付件数</div>
-      <div class="vl" id="k-total">42<span class="un">件</span></div>
-      <div class="dt">前月 44 件</div>
+      <div class="lb">当月の特注依頼</div>
+      <div class="vl" id="k-total">38<span class="un">件</span></div>
+      <div class="dt">前月 35 件</div>
     </div>
     <div class="kpi">
-      <div class="lb">未対応（受付済＋対応中）</div>
-      <div class="vl" id="k-open">12<span class="un">件</span></div>
-      <div class="dt" id="k-open-dt">うち期限3日以内 3 件</div>
+      <div class="lb">未回答（受付済＋検討中）</div>
+      <div class="vl" id="k-open">7<span class="un">件</span></div>
+      <div class="dt" id="k-open-dt">うち期限2日以内 2 件</div>
     </div>
     <div class="kpi">
-      <div class="lb">平均リードタイム</div>
-      <div class="vl">3.2<span class="un">日</span></div>
-      <div class="dt good">導入前 8.5 日 → 62% 短縮</div>
+      <div class="lb">平均回答リードタイム</div>
+      <div class="vl">1.8<span class="un">日</span></div>
+      <div class="dt good">導入前 5.2 日 → 65% 短縮</div>
     </div>
     <div class="kpi">
-      <div class="lb">期限超過</div>
-      <div class="vl" id="k-over" style="color:#a4262c">2<span class="un">件</span></div>
-      <div class="dt bad">要フォロー</div>
+      <div class="lb">回答期限の超過</div>
+      <div class="vl" id="k-over" style="color:#a4262c">1<span class="un">件</span></div>
+      <div class="dt bad">失注リスク・要フォロー</div>
     </div>
 
     <div class="panel c2">
-      <h4>依頼元部署別の受付件数 <span>当月</span></h4>
-      <div class="bar"><span class="bl">設計部</span><span class="bt"><span class="bf" style="width:100%"></span></span><span class="bv">12</span></div>
-      <div class="bar"><span class="bl">生産技術部</span><span class="bt"><span class="bf" style="width:75%"></span></span><span class="bv">9</span></div>
-      <div class="bar"><span class="bl">品質保証部</span><span class="bt"><span class="bf" style="width:67%"></span></span><span class="bv">8</span></div>
-      <div class="bar"><span class="bl">製造部</span><span class="bt"><span class="bf" style="width:58%"></span></span><span class="bv">7</span></div>
-      <div class="bar"><span class="bl">営業部</span><span class="bt"><span class="bf" style="width:50%"></span></span><span class="bv">6</span></div>
+      <h4>依頼元別の特注件数 <span>当月</span></h4>
+      <div class="bar"><span class="bl">東日本営業部</span><span class="bt"><span class="bf" style="width:100%"></span></span><span class="bv">13</span></div>
+      <div class="bar"><span class="bl">西日本営業部</span><span class="bt"><span class="bf" style="width:69%"></span></span><span class="bv">9</span></div>
+      <div class="bar"><span class="bl">代理店営業部</span><span class="bt"><span class="bf" style="width:54%"></span></span><span class="bv">7</span></div>
+      <div class="bar"><span class="bl">官公庁営業部</span><span class="bt"><span class="bf" style="width:38%"></span></span><span class="bv">5</span></div>
+      <div class="bar"><span class="bl">海外営業部</span><span class="bt"><span class="bf" style="width:31%"></span></span><span class="bv">4</span></div>
     </div>
 
     <div class="panel c2">
-      <h4>ステータス構成 <span>当月</span></h4>
+      <h4>ステータス構成と受注率 <span>当月</span></h4>
       <div class="donut">
         <div class="dchart" id="donut">
-          <div class="dctr"><b id="d-total">42</b><span>件</span></div>
+          <div class="dctr"><b id="d-total">38</b><span>件</span></div>
         </div>
         <div class="lgnd">
-          <div><i style="background:#107c10"></i>完了<span class="n" id="lg-done">28</span></div>
-          <div><i style="background:#0078d4"></i>対応中<span class="n" id="lg-work">7</span></div>
-          <div><i style="background:#8661c5"></i>受付済<span class="n" id="lg-new">5</span></div>
-          <div><i style="background:#c8c6c4"></i>保留<span class="n" id="lg-hold">2</span></div>
+          <div><i style="background:#107c10"></i>受注<span class="n" id="lg-won">19</span></div>
+          <div><i style="background:#0078d4"></i>見積回答済<span class="n" id="lg-ans">5</span></div>
+          <div><i style="background:#8661c5"></i>技術検討中<span class="n" id="lg-chk">4</span></div>
+          <div><i style="background:#e8590c"></i>受付済<span class="n" id="lg-new">3</span></div>
+          <div><i style="background:#c8c6c4"></i>見送り<span class="n" id="lg-lost">7</span></div>
+          <div style="margin-top:7px; padding-top:7px; border-top:1px solid #edebe9">
+            <b style="font-size:12.5px">受注率</b><span class="n" id="k-rate" style="color:#107c10; font-size:15px">73%</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="panel c2">
-      <h4>平均リードタイムの推移 <span>受付から完了まで（日）</span></h4>
+      <h4>平均回答リードタイムの推移 <span>受付から客先回答まで（日）</span></h4>
       <div class="linechart">
         <svg viewBox="0 0 420 150" preserveAspectRatio="none">
           <line x1="0" y1="30" x2="420" y2="30" stroke="#f3f2f1" stroke-width="1"/>
@@ -856,28 +883,28 @@
           <circle cx="340" cy="110" r="4" fill="#0078d4"/><circle cx="400" cy="118" r="5" fill="#107c10"/>
           <line x1="150" y1="8" x2="150" y2="142" stroke="#d83b01" stroke-width="1" stroke-dasharray="4 3"/>
           <text x="155" y="18" font-size="10" fill="#d83b01" font-family="Segoe UI">運用開始</text>
-          <text x="8" y="16" font-size="10" fill="#8a8886" font-family="Segoe UI">8.5</text>
-          <text x="386" y="136" font-size="10" fill="#107c10" font-family="Segoe UI">3.2</text>
+          <text x="8" y="16" font-size="10" fill="#8a8886" font-family="Segoe UI">5.2</text>
+          <text x="386" y="136" font-size="10" fill="#107c10" font-family="Segoe UI">1.8</text>
         </svg>
         <div class="lxlab"><span>3月</span><span>4月</span><span>5月</span><span>6月</span><span>7月</span><span>8月</span></div>
       </div>
     </div>
 
     <div class="panel c2">
-      <h4>滞留している依頼 <span>受付日が古い順</span></h4>
+      <h4>未回答で滞留している依頼 <span>受付日が古い順</span></h4>
       <table>
-        <thead><tr><th>依頼No</th><th>件名</th><th>経過</th><th>担当</th></tr></thead>
+        <thead><tr><th>依頼No</th><th>顧客・特注内容</th><th>経過</th><th>担当</th></tr></thead>
         <tbody>
-          <tr><td><span class="lnk">REQ-2026-0128</span></td><td>組立手順書の改訂</td><td class="over">14 日</td><td>未割当</td></tr>
-          <tr><td><span class="lnk">REQ-2026-0131</span></td><td>治具図面の寸法変更</td><td class="over">11 日</td><td>佐藤</td></tr>
-          <tr><td><span class="lnk">REQ-2026-0136</span></td><td>試作品の追加手配</td><td class="soon">6 日</td><td>高橋</td></tr>
+          <tr><td><span class="lnk">SP-2026-0128</span></td><td>建設A社：ヘルメット 社名印刷</td><td class="over">14 日</td><td>未割当</td></tr>
+          <tr><td><span class="lnk">SP-2026-0131</span></td><td>化学F社：マスク 交換フィルタ</td><td class="over">11 日</td><td>佐藤</td></tr>
+          <tr><td><span class="lnk">SP-2026-0136</span></td><td>自動車D社：手袋 特小サイズ</td><td class="soon">6 日</td><td>高橋</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="biNote">
       <b>この画面が上申資料になります。</b>
-      「受付件数 × 1件あたりの削減時間」で削減工数を算出でき、リードタイム短縮は現場が実感できる指標です。数字はダッシュボードから自動で出るため、報告のための集計作業は発生しません。
+      削減時間だけでなく、<b>回答リードタイム 5.2日 → 1.8日</b> と <b>受注率</b> が並ぶので、「特注の回答が遅くて失注していた案件を減らせる」という話ができます。営業部門を味方につけやすいのが、この業務を最初に選ぶ理由です。
     </div>
   </div>
 </section>
@@ -886,24 +913,25 @@
 <section class="view" id="v-sum">
   <div class="narr">
     <h2>まとめ：どの機能が、何を効率化するのか<span class="bg bg-view">表示のみ</span></h2>
-    <p>この1つの業務（依頼の受付〜進捗管理）について、機能ごとに何の作業が無くなるかを整理しました。数字はすべて「月42件の依頼」を前提にした試算です。</p>
+    <p>特注依頼の受付〜回答という1つの業務について、機能ごとに何の作業が無くなるかを整理しました。数字はすべて「月38件の特注依頼」を前提にした試算です。</p>
     <div class="tools"><span class="tool">1業務・1部署あたりの効果</span><span class="tool">人件費単価 3,000円／時で換算</span></div>
   </div>
 
   <div class="app">
     <div style="overflow-x:auto">
-      <table style="min-width:900px">
+      <table style="min-width:920px">
         <thead>
           <tr><th>機能</th><th>無くなる作業</th><th>計算の根拠</th><th style="text-align:center">月あたり</th></tr>
         </thead>
         <tbody>
-          <tr><td><b>Forms</b>（受付）</td><td>記入不備の差し戻し・内容の聞き直し</td><td>月13件（不備3割）× 8分</td><td style="text-align:center">1.7 時間</td></tr>
-          <tr><td><b>Power Automate</b>（採番・登録）</td><td>Excel台帳への転記</td><td>月42件 × 4分</td><td style="text-align:center">2.8 時間</td></tr>
-          <tr><td><b>Teams 通知</b></td><td>「誰が拾ったか」の確認・進捗の問い合わせ対応</td><td>月20件 × 5分</td><td style="text-align:center">1.7 時間</td></tr>
-          <tr><td><b>Power Automate</b>（期限リマインド）</td><td>催促メールの作成・送信</td><td>月30回 × 5分</td><td style="text-align:center">2.5 時間</td></tr>
-          <tr><td><b>SharePoint リスト</b></td><td>版の管理・最新ファイルの所在確認</td><td>「どれが最新か」が無くなる</td><td style="text-align:center">2.0 時間</td></tr>
-          <tr><td><b>Power BI</b></td><td>月次の集計・レポート作成</td><td>半日 → 0</td><td style="text-align:center">4.0 時間</td></tr>
-          <tr style="background:#fff2cc"><td><b>合計</b></td><td></td><td></td><td style="text-align:center"><b>14.7 時間</b></td></tr>
+          <tr><td><b>Forms</b>（受付）</td><td>情報不足による聞き直し・差し戻し</td><td>月11件（不備3割）× 8分</td><td style="text-align:center">1.5 時間</td></tr>
+          <tr><td><b>Power Automate</b>（採番・登録）</td><td>Excel台帳への転記</td><td>月38件 × 4分</td><td style="text-align:center">2.5 時間</td></tr>
+          <tr><td><b>Teams 通知</b></td><td>「誰が見るか」の確認・進捗の問い合わせ対応</td><td>月20件 × 5分</td><td style="text-align:center">1.7 時間</td></tr>
+          <tr><td><b>SharePoint 検索</b>（過去実績）</td><td>過去の類似特注を探す作業</td><td>月38件のうち20件 × 7.5分</td><td style="text-align:center">2.5 時間</td></tr>
+          <tr><td><b>Power Automate</b>（期限リマインド）</td><td>回答期限の見張り・営業からの催促対応</td><td>月25回 × 5分</td><td style="text-align:center">2.1 時間</td></tr>
+          <tr><td><b>SharePoint リスト</b></td><td>版の管理・最新ファイルの所在確認</td><td>「どれが最新か」が無くなる</td><td style="text-align:center">1.5 時間</td></tr>
+          <tr><td><b>Power BI</b></td><td>月次の集計・受注率レポート作成</td><td>半日 → 0</td><td style="text-align:center">3.0 時間</td></tr>
+          <tr style="background:#fff2cc"><td><b>合計</b></td><td></td><td></td><td style="text-align:center"><b>14.8 時間</b></td></tr>
         </tbody>
       </table>
     </div>
@@ -912,27 +940,27 @@
   <div class="sumtot">
     <div class="kpi" style="border:1px solid var(--border2)">
       <div class="lb">削減時間</div>
-      <div class="vl">14.7<span class="un">時間／月</span></div>
-      <div class="dt">年間 約176時間</div>
+      <div class="vl">14.8<span class="un">時間／月</span></div>
+      <div class="dt">年間 約178時間 ＝ 約53万円</div>
     </div>
     <div class="kpi" style="border:1px solid var(--border2)">
-      <div class="lb">金額換算（@3,000円／時）</div>
-      <div class="vl">約53<span class="un">万円／年</span></div>
-      <div class="dt">この1業務・1部署のみで</div>
+      <div class="lb">回答リードタイム</div>
+      <div class="vl">5.2<span class="un">→ 1.8日</span></div>
+      <div class="dt good">失注リスクが下がる</div>
     </div>
     <div class="kpi" style="border:1px solid var(--border2)">
-      <div class="lb">リードタイム</div>
-      <div class="vl">8.5<span class="un">→ 3.2日</span></div>
-      <div class="dt good">依頼元が体感できる変化</div>
+      <div class="lb">回答期限の超過</div>
+      <div class="vl">月2〜3<span class="un">件 → 0</span></div>
+      <div class="dt good">仕組みで防げる</div>
     </div>
   </div>
 
   <div class="app" style="padding:15px 18px">
     <div style="font-size:13px; line-height:1.8">
       <b>この数字の読み方</b><br>
-      上の 14.7時間／月 は、<b>依頼受付という1つの業務、1つの部署だけ</b>の数字です。金額に換算すると年53万円で、投資判断の材料としては小さく見えます。<br>
-      効果が積み上がるのは、<b>この型を他の業務・他の部署へ展開したとき</b>です。申請・承認、点検記録、報告書作成なども同じ構造（受付 → 台帳 → 通知 → 可視化）なので、社内で2〜3名が作れるようになれば、横展開にかかるのはほぼ人件費だけになります。<br>
-      <span style="color:var(--sub)">※ 金額よりも、リードタイム 8.5日 → 3.2日 の方が現場には伝わります。依頼を出す側の「待たされる感」が変わる部分です。</span>
+      削減時間 14.8時間／月（年約53万円）は、<b>特注依頼という1つの業務だけ</b>の数字です。これ単体で投資を回収する話にはなりません。<br>
+      この業務を最初に選ぶ理由は、<b>金額ではなく「回答の速さ」が売上に直結する</b>ことです。回答が遅れて失注していた案件が月1件でも減れば、削減時間より効果は大きくなります。<span style="color:var(--sub)">（特注1件あたりの粗利が分からないため、金額換算はあえて置いていません）</span><br>
+      そして受付 → 台帳 → 通知 → 期限管理 → 可視化という<b>同じ構造は、他の業務にもそのまま使えます</b>。設計変更、試作依頼、規格・検定の期限管理、校正管理、クレーム受付。社内で2〜3名が作れるようになれば、2本目以降にかかるのはほぼ人件費だけです。
     </div>
   </div>
 </section>
@@ -955,17 +983,17 @@
 /* ============ 画面遷移 ============ */
 const VIEWS = [
   {id:'before', no:'1', nav:'現状（Excel＋メール）', ttl:'現状：Excel台帳＋メール催促'},
-  {id:'form',   no:'2', nav:'依頼フォーム',         ttl:'受付：依頼フォーム（Forms）'},
-  {id:'teams',  no:'3', nav:'Teams通知',            ttl:'通知：担当チャネルへ自動投稿'},
-  {id:'list',   no:'4', nav:'台帳（リスト）',       ttl:'台帳：SharePoint リスト'},
-  {id:'flow',   no:'5', nav:'フローの中身',         ttl:'自動化：Power Automate のフロー'},
-  {id:'bi',     no:'6', nav:'ダッシュボード',       ttl:'可視化：Power BI ダッシュボード'},
-  {id:'sum',    no:'7', nav:'効率化のまとめ',       ttl:'まとめ：どの機能が何を効率化するか'}
+  {id:'form',   no:'2', nav:'特注依頼フォーム',      ttl:'受付：特注依頼フォーム（Forms）'},
+  {id:'teams',  no:'3', nav:'Teams通知',             ttl:'通知：技術チャネルへ自動投稿'},
+  {id:'list',   no:'4', nav:'台帳（リスト）',        ttl:'台帳：特注依頼リスト（SharePoint）'},
+  {id:'flow',   no:'5', nav:'フローの中身',          ttl:'自動化：Power Automate のフロー'},
+  {id:'bi',     no:'6', nav:'ダッシュボード',        ttl:'可視化：Power BI ダッシュボード'},
+  {id:'sum',    no:'7', nav:'効率化のまとめ',        ttl:'まとめ：どの機能が何を効率化するか'}
 ];
 let cur = 0;
 
 const nav = document.getElementById('stepnav');
-VIEWS.forEach((v,i)=>{
+VIEWS.forEach((v)=>{
   const b = document.createElement('button');
   b.innerHTML = '<span class="no">'+v.no+'</span>'+v.nav;
   b.onclick = ()=>go(v.id);
@@ -996,17 +1024,22 @@ document.addEventListener('keydown', e=>{
 
 /* ============ 台帳データ ============ */
 const TODAY = new Date(2026,7,19); // 2026-08-19
+const STATUSES = ['受付済','技術検討中','見積回答済','受注','見送り'];
+const OPEN = ['受付済','技術検討中'];
+/* 当月のうち、台帳に表示していない過去分（合計38件にするための実績） */
+const BASE = {'受注':18, '見送り':6, '見積回答済':4};
+
 let requests = [
-  {no:'REQ-2026-0142', kind:'改善提案',   subj:'検査記録の入力項目を簡素化したい', dept:'品質保証部', rc:'8/18', due:'2026-09-04', pri:'低', st:'受付済', who:'未割当'},
-  {no:'REQ-2026-0141', kind:'設計変更依頼', subj:'顧客要望による寸法特注の可否確認', dept:'営業部',   rc:'8/18', due:'2026-08-22', pri:'高', st:'対応中', who:'佐藤'},
-  {no:'REQ-2026-0139', kind:'不具合報告',  subj:'A型シリーズ 表示ラベルの誤記',    dept:'品質保証部', rc:'8/15', due:'2026-08-21', pri:'高', st:'対応中', who:'鈴木'},
-  {no:'REQ-2026-0138', kind:'仕様確認',    subj:'部材Cの代替品使用可否',           dept:'製造部',    rc:'8/14', due:'2026-08-28', pri:'中', st:'受付済', who:'未割当'},
-  {no:'REQ-2026-0136', kind:'試作依頼',    subj:'試作品の追加手配',               dept:'設計部',    rc:'8/13', due:'2026-08-25', pri:'中', st:'対応中', who:'高橋'},
-  {no:'REQ-2026-0134', kind:'設計変更依頼', subj:'梱包仕様の変更（輸送破損対策）',  dept:'製造部',    rc:'8/12', due:'2026-09-08', pri:'低', st:'保留',   who:'佐藤'},
-  {no:'REQ-2026-0131', kind:'設計変更依頼', subj:'治具図面の寸法変更',             dept:'生産技術部', rc:'8/8',  due:'2026-08-20', pri:'中', st:'対応中', who:'佐藤'},
-  {no:'REQ-2026-0128', kind:'改善提案',    subj:'組立手順書の改訂',               dept:'生産技術部', rc:'8/5',  due:'2026-08-18', pri:'中', st:'受付済', who:'未割当'},
-  {no:'REQ-2026-0125', kind:'仕様確認',    subj:'表面処理の指定変更について',      dept:'設計部',    rc:'8/4',  due:'2026-08-15', pri:'中', st:'完了',   who:'鈴木'},
-  {no:'REQ-2026-0121', kind:'不具合報告',  subj:'ロット差による色味のばらつき',    dept:'品質保証部', rc:'8/3',  due:'2026-08-14', pri:'高', st:'完了',   who:'高橋'}
+  {no:'SP-2026-0142', kind:'サイズ・寸法特注',  subj:'建設A社：作業服 W-320 大寸サイズ追加（4L・5L）', dept:'東日本営業部',  rc:'8/18', due:'2026-08-25', pri:'中', st:'受付済',     who:'未割当'},
+  {no:'SP-2026-0141', kind:'表示・刺繍・印刷',  subj:'電機B社：作業服 W-320 社名刺繍＋号車番号',       dept:'西日本営業部',  rc:'8/18', due:'2026-08-21', pri:'高', st:'技術検討中', who:'佐藤'},
+  {no:'SP-2026-0139', kind:'機能追加・仕様変更', subj:'G市：保護帽 H-25 あご紐仕様の変更',              dept:'官公庁営業部',  rc:'8/15', due:'2026-08-20', pri:'高', st:'技術検討中', who:'鈴木'},
+  {no:'SP-2026-0138', kind:'色・素材変更',      subj:'食品C社：作業用シューズ A-200 白色・耐油仕様',   dept:'東日本営業部',  rc:'8/14', due:'2026-08-28', pri:'中', st:'受付済',     who:'未割当'},
+  {no:'SP-2026-0136', kind:'サイズ・寸法特注',  subj:'自動車D社：保護手袋 G-150 特小サイズ',           dept:'代理店営業部',  rc:'8/13', due:'2026-08-25', pri:'中', st:'技術検討中', who:'高橋'},
+  {no:'SP-2026-0134', kind:'セット・梱包変更',  subj:'物流E社：保護具セット化＋個別包装',              dept:'西日本営業部',  rc:'8/12', due:'2026-09-08', pri:'低', st:'見積回答済', who:'佐藤'},
+  {no:'SP-2026-0131', kind:'機能追加・仕様変更', subj:'化学F社：粉じん用マスク M-70 交換フィルタ仕様',  dept:'東日本営業部',  rc:'8/8',  due:'2026-08-20', pri:'中', st:'技術検討中', who:'佐藤'},
+  {no:'SP-2026-0128', kind:'表示・刺繍・印刷',  subj:'建設A社：ヘルメット H-25 社名印刷（2色）',       dept:'東日本営業部',  rc:'8/5',  due:'2026-08-18', pri:'中', st:'受付済',     who:'未割当'},
+  {no:'SP-2026-0125', kind:'色・素材変更',      subj:'電機B社：静電マット E-90 寸法・色指定',          dept:'西日本営業部',  rc:'8/4',  due:'2026-08-15', pri:'中', st:'受注',       who:'鈴木'},
+  {no:'SP-2026-0121', kind:'サイズ・寸法特注',  subj:'自動車D社：クリーンウェア C-110 丈詰め',         dept:'代理店営業部',  rc:'8/3',  due:'2026-08-14', pri:'高', st:'見送り',     who:'高橋'}
 ];
 let filter = 'all';
 
@@ -1014,12 +1047,11 @@ function dueInfo(iso, st){
   const d = new Date(iso+'T00:00:00');
   const diff = Math.round((d - TODAY)/86400000);
   const label = (d.getMonth()+1)+'/'+d.getDate();
-  if(st === '完了') return {html:label, flag:false};
+  if(OPEN.indexOf(st) < 0) return {html:label, flag:false};
   if(diff < 0)  return {html:'<span class="over">'+label+'（'+(-diff)+'日超過）</span>', flag:true};
-  if(diff <= 3) return {html:'<span class="soon">'+label+'（残り'+diff+'日）</span>',  flag:true};
+  if(diff <= 2) return {html:'<span class="soon">'+label+'（残り'+diff+'日）</span>',  flag:true};
   return {html:label+'（残り'+diff+'日）', flag:false};
 }
-const stCls = {'完了':'p-done','対応中':'p-work','受付済':'p-new','保留':'p-hold'};
 
 function renderList(){
   const body = document.getElementById('listbody');
@@ -1027,7 +1059,7 @@ function renderList(){
   let shown = 0;
   requests.forEach((r,i)=>{
     const di = dueInfo(r.due, r.st);
-    if(filter==='未対応' && (r.st==='完了')) return;
+    if(filter==='未回答' && OPEN.indexOf(r.st) < 0) return;
     if(filter==='期限'   && !di.flag) return;
     if(filter==='高'     && r.pri!=='高') return;
     shown++;
@@ -1038,7 +1070,7 @@ function renderList(){
       r.kind, r.subj, r.dept, r.rc, di.html,
       '<span class="pill '+(r.pri==='高'?'p-high':'p-mid')+'">'+r.pri+'</span>',
       '<select class="st" data-i="'+i+'">'+
-        ['受付済','対応中','完了','保留'].map(s=>'<option'+(s===r.st?' selected':'')+'>'+s+'</option>').join('')+
+        STATUSES.map(x=>'<option'+(x===r.st?' selected':'')+'>'+x+'</option>').join('')+
       '</select>',
       '<div class="who-cell"><span class="av">'+(r.who==='未割当'?'—':r.who.slice(0,1))+'</span>'+r.who+'</div>'
     ];
@@ -1062,43 +1094,50 @@ document.getElementById('chips').addEventListener('click', e=>{
 });
 
 /* ============ ダッシュボード ============ */
-const BASE_DONE = 32; // 当月の完了（台帳に表示していない過去分）
 function renderBI(){
-  const c = {'完了':0,'対応中':0,'受付済':0,'保留':0};
-  requests.forEach(r=>c[r.st]++);
-  const done = c['完了'] + BASE_DONE;
-  const total = done + c['対応中'] + c['受付済'] + c['保留'];
-  const open = c['対応中'] + c['受付済'];
+  const c = {'受付済':0,'技術検討中':0,'見積回答済':0,'受注':0,'見送り':0};
+  requests.forEach(r=>{ if(c[r.st] !== undefined) c[r.st]++; });
+  const won  = c['受注']       + BASE['受注'];
+  const lost = c['見送り']     + BASE['見送り'];
+  const ans  = c['見積回答済'] + BASE['見積回答済'];
+  const chk  = c['技術検討中'];
+  const nw   = c['受付済'];
+  const total = won + lost + ans + chk + nw;
+  const open = chk + nw;
   let over = 0, soon = 0;
   requests.forEach(r=>{
-    if(r.st==='完了') return;
+    if(OPEN.indexOf(r.st) < 0) return;
     const diff = Math.round((new Date(r.due+'T00:00:00') - TODAY)/86400000);
-    if(diff < 0) over++; else if(diff <= 3) soon++;
+    if(diff < 0) over++; else if(diff <= 2) soon++;
   });
   document.getElementById('k-total').innerHTML = total+'<span class="un">件</span>';
   document.getElementById('k-open').innerHTML  = open+'<span class="un">件</span>';
   document.getElementById('k-over').innerHTML  = over+'<span class="un">件</span>';
-  document.getElementById('k-open-dt').textContent = 'うち期限3日以内 '+soon+' 件';
+  document.getElementById('k-open-dt').textContent = 'うち期限2日以内 '+soon+' 件';
   document.getElementById('d-total').textContent = total;
-  document.getElementById('lg-done').textContent = done;
-  document.getElementById('lg-work').textContent = c['対応中'];
-  document.getElementById('lg-new').textContent  = c['受付済'];
-  document.getElementById('lg-hold').textContent = c['保留'];
+  document.getElementById('lg-won').textContent  = won;
+  document.getElementById('lg-ans').textContent  = ans;
+  document.getElementById('lg-chk').textContent  = chk;
+  document.getElementById('lg-new').textContent  = nw;
+  document.getElementById('lg-lost').textContent = lost;
+  document.getElementById('k-rate').textContent =
+    (won + lost > 0) ? Math.round(won/(won+lost)*100)+'%' : '—';
   const p = n => (n/total*360);
-  let a1 = p(done), a2 = a1 + p(c['対応中']), a3 = a2 + p(c['受付済']);
+  const a1 = p(won), a2 = a1 + p(ans), a3 = a2 + p(chk), a4 = a3 + p(nw);
   document.getElementById('donut').style.background =
     'conic-gradient(#107c10 0deg '+a1+'deg, #0078d4 '+a1+'deg '+a2+'deg, '+
-    '#8661c5 '+a2+'deg '+a3+'deg, #c8c6c4 '+a3+'deg 360deg)';
+    '#8661c5 '+a2+'deg '+a3+'deg, #e8590c '+a3+'deg '+a4+'deg, #c8c6c4 '+a4+'deg 360deg)';
 }
 
 /* ============ 自動入力の再生（台帳のセルが埋まる様子） ============ */
+let seq = 143;
 let filling = false;
 function ensureNewRow(){
   let r = requests.find(x=>x.isNew);
   if(r) return r;
-  const no = 'REQ-2026-0'+(seq++);
-  r = {no, kind:'仕様確認', subj:'部材Bの供給元変更に伴う仕様確認', dept:'製造部', rc:'8/19',
-       due:'2026-08-28', pri:'中', st:'受付済', who:'未割当', isNew:true};
+  const no = 'SP-2026-0'+(seq++);
+  r = {no, kind:'表示・刺繍・印刷', subj:'建設A社：作業服 W-320 社名刺繍＋号車番号',
+       dept:'東日本営業部', rc:'8/19', due:'2026-08-26', pri:'中', st:'受付済', who:'未割当', isNew:true};
   requests.unshift(r);
   return r;
 }
@@ -1115,7 +1154,7 @@ function playFill(){
   cap.className = 'fillcap';
   cap.innerHTML = '<b>⚡ フロー実行中…</b>　Power Automate が台帳に書き込んでいます（人がキーを打った回数：0）';
   renderList(); renderBI();
-  const labels = ['依頼No を採番','依頼区分','件名','依頼元','受付日','希望期限','優先度','ステータス（受付済）','担当者'];
+  const labels = ['依頼No を採番','特注区分','顧客・特注内容','依頼元','受付日','回答期限','優先度','ステータス（受付済）','担当者'];
   const timer = setInterval(()=>{
     r.fill++;
     renderList();
@@ -1128,44 +1167,47 @@ function playFill(){
       renderList(); renderBI();
       cap.className = 'fillcap done';
       cap.innerHTML = '<b>✓ 9項目を自動入力しました（所要 3秒）</b>　'+
-        '同じ内容を手で転記すると1件あたり約4分。月42件なら 2.8時間／月がそのまま消えます。';
+        '同じ内容を手で転記すると1件あたり約4分。月38件なら 2.5時間／月がそのまま消えます。';
     }
   }, 300);
 }
 
 /* ============ フォーム送信 ============ */
-let seq = 143;
-document.querySelectorAll('#f-pri span').forEach(s=>{
-  s.onclick = ()=>{ document.querySelectorAll('#f-pri span').forEach(x=>x.classList.remove('on')); s.classList.add('on'); };
+document.querySelectorAll('#f-pri span').forEach(sp=>{
+  sp.onclick = ()=>{ document.querySelectorAll('#f-pri span').forEach(x=>x.classList.remove('on')); sp.classList.add('on'); };
 });
 document.getElementById('f-send').onclick = ()=>{
   const kind  = document.getElementById('f-kind').value;
   const dept  = document.getElementById('f-dept').value;
-  const title = document.getElementById('f-title').value.trim() || '（件名未入力）';
-  const due   = document.getElementById('f-due').value || '2026-08-28';
+  const cust  = document.getElementById('f-cust').value;
+  const title = document.getElementById('f-title').value.trim() || '（内容未入力）';
+  const qty   = document.getElementById('f-qty').value.trim() || '未定';
+  const due   = document.getElementById('f-due').value || '2026-08-26';
   const pri   = document.querySelector('#f-pri span.on').dataset.v;
-  const no    = 'REQ-2026-0'+(seq++);
+  const no    = 'SP-2026-0'+(seq++);
+  const subj  = cust+'：'+title;
 
   requests.forEach(r=>{ r.isNew = false; r.played = false; });
-  requests.unshift({no, kind, subj:title, dept, rc:'8/19', due, pri, st:'受付済', who:'未割当', isNew:true});
+  requests.unshift({no, kind, subj, dept, rc:'8/19', due, pri, st:'受付済', who:'未割当', isNew:true});
   renderList(); renderBI();
 
-  const di = dueInfo(due);
+  const di = dueInfo(due, '受付済');
   document.getElementById('tms-no').textContent   = no;
   document.getElementById('tms-kind').textContent = kind;
   document.getElementById('tms-dept').textContent = dept;
-  document.getElementById('tms-subj').textContent = title;
+  document.getElementById('tms-subj').textContent = subj;
+  document.getElementById('tms-qty').textContent  = qty;
   document.getElementById('tms-due').innerHTML    = di.html;
-  document.getElementById('tms-pri').innerHTML    = pri==='高'
-      ? '<span class="pill p-high">高</span>　＠当番担当者にメンションを送信しました'
+  document.getElementById('tms-pri').innerHTML    = (pri==='高' || dept==='官公庁営業部')
+      ? '<span class="pill p-high">'+pri+'</span>　＠当番担当者にメンションを送信しました'
       : '<span class="pill p-mid">'+pri+'</span>';
-  document.getElementById('log-src').textContent  = '依頼受付フォーム（'+dept+'）';
+  document.getElementById('log-src').textContent  = '特注依頼フォーム（'+dept+'）';
 
   document.getElementById('formArea').innerHTML =
     '<div class="thanks">'+
       '<div class="ck">✓</div>'+
-      '<h3>ご依頼を受け付けました</h3>'+
-      '<p>受付番号を自動で発行し、担当部署へ通知しました。<br>進捗はTeamsからご確認いただけます。</p>'+
+      '<h3>特注のご依頼を受け付けました</h3>'+
+      '<p>受付番号を自動で発行し、技術担当へ通知しました。<br>検討状況はTeamsと台帳からご確認いただけます。</p>'+
       '<div class="no">'+no+'</div>'+
       '<p style="margin-top:16px"><button class="btn pri" onclick="go(\'teams\')">この後に何が起きるか →</button></p>'+
     '</div>';
