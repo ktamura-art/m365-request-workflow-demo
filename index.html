@@ -325,6 +325,37 @@
   .discl{max-width:1200px; margin:0 auto; padding:22px 16px 10px; font-size:11.5px; color:var(--faint);
         line-height:1.7;}
 
+  /* ===== 追加：バッジ・効率化ストリップ・自動入力 ===== */
+  .narr h2 .bg{font-size:11px; font-weight:700; padding:2px 9px; border-radius:10px; margin-left:10px;
+        vertical-align:2px; white-space:nowrap;}
+  .bg-int{background:var(--okbg); color:#0b5c0b;}
+  .bg-view{background:var(--chip); color:var(--sub);}
+  .eff{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; padding-top:11px;
+        border-top:1px solid var(--border);}
+  .eff div{font-size:12.5px; color:var(--text);}
+  .eff b{display:block; font-size:11px; color:var(--faint); font-weight:700; margin-bottom:3px;
+        letter-spacing:.02em;}
+  .eff s{color:var(--red); text-decoration-thickness:1.5px;}
+  .eff .hi{color:var(--ok); font-weight:700;}
+  .cta{margin-top:20px; text-align:center;}
+  .cta button{font-size:14.5px; font-weight:600; padding:12px 28px; border-radius:3px; border:none;
+        background:var(--blue); color:#fff; cursor:pointer;}
+  .cta button:hover{background:var(--blue-dark);}
+  .cta p{font-size:12px; color:var(--faint); margin-top:8px;}
+  .replay{font-size:12.5px; padding:5px 13px; border-radius:3px; border:1px solid var(--border2);
+        background:#fff; color:var(--blue-dark); font-weight:600; cursor:pointer; margin-left:auto;}
+  .replay:hover{background:var(--blue-pale); border-color:var(--blue);}
+  .replay:disabled{color:var(--faint); cursor:default; background:#fff; border-color:var(--border);}
+  .fillcap{margin-top:12px; background:#fffbe6; border:1px solid #ffe9a8; border-radius:2px;
+        padding:10px 14px; font-size:12.5px; color:#7a5b00; display:flex; align-items:center; gap:9px;}
+  .fillcap.done{background:var(--okbg); border-color:#b7e0b7; color:#0b5c0b;}
+  td.flash{animation:cellflash .8s ease;}
+  @keyframes cellflash{0%{background:#ffe066;} 100%{background:#fffbe6;}}
+  tr.new td.pend{background:#fffdf2;}
+  .footnav .hint{font-size:11.5px; color:var(--faint); flex:0 0 auto;}
+  .sumtot{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:14px 0;}
+  @media (max-width:700px){.eff{grid-template-columns:1fr;} .sumtot{grid-template-columns:1fr;}}
+
   @media (max-width:900px){
     .bicanvas{grid-template-columns:repeat(2,1fr);} .c3,.c4,.biNote{grid-column:span 2;}
     .tmsnav{display:none;}
@@ -354,9 +385,14 @@
 <!-- ============ 1. BEFORE ============ -->
 <section class="view" id="v-before">
   <div class="narr">
-    <h2>現状：Excel台帳＋メール催促</h2>
+    <h2>現状：Excel台帳＋メール催促<span class="bg bg-view">表示のみ</span></h2>
     <p>依頼はメールや口頭で届き、担当者がExcel台帳へ転記します。誰が対応中かは台帳を開かないと分からず、催促は担当者の記憶頼みです。まずはこの状態を確認してください。</p>
     <div class="tools"><span class="tool x">Excel（個人管理）</span><span class="tool x">メール</span><span class="tool x">口頭・電話</span></div>
+    <div class="eff">
+      <div><b>この画面の役割</b><span>現状の再現です。<u>クリックできる箇所はありません</u>（Excelのシートタブも動きません）</span></div>
+      <div><b>ここで見ていただくこと</b><span>重複行・空欄の担当列・ファイル名の「_最新_v3_修正版」</span></div>
+      <div><b>次の画面から</b><span class="hi">実際に操作できます</span></div>
+    </div>
   </div>
 
   <div class="xl">
@@ -405,14 +441,24 @@
     <div class="prob"><b>催促が人の記憶頼み</b><span>気づいた人が都度メールを書いている</span></div>
     <div class="prob"><b>集計が毎月の手作業</b><span>件数・リードタイムを出すのに半日かかる</span></div>
   </div>
+
+  <div class="cta">
+    <button onclick="go('form')">② 依頼フォームへ進む →</button>
+    <p>上部のタブ、下部の「次へ →」、キーボードの ←→ でも移動できます</p>
+  </div>
 </section>
 
 <!-- ============ 2. FORM ============ -->
 <section class="view" id="v-form">
   <div class="narr">
-    <h2>受付：依頼フォーム</h2>
+    <h2>受付：依頼フォーム<span class="bg bg-int">操作できます</span></h2>
     <p>依頼元の各部署は、このフォームから依頼を出します。スマートフォンからも入力でき、必須項目が埋まっていないと送信できないため、記入漏れによる差し戻しが起きません。実際に送信してみてください。</p>
     <div class="tools"><span class="tool">Microsoft Forms</span><span class="tool">Power Apps でも可</span><span class="tool">標準ライセンス</span></div>
+    <div class="eff">
+      <div><b>なくなる作業</b><span><s>依頼内容の聞き直し・記入不備の差し戻し</s></span></div>
+      <div><b>削減の見込み</b><span>月13件（不備3割）× 8分 ＝ <span class="hi">約1.7時間／月</span></span></div>
+      <div><b>効く相手</b><span>依頼元の各部署（何を書けばよいか迷わなくなる）</span></div>
+    </div>
   </div>
 
   <div class="formstage">
@@ -480,9 +526,14 @@
 <!-- ============ 3. TEAMS ============ -->
 <section class="view" id="v-teams">
   <div class="narr">
-    <h2>通知：担当チャネルへ自動投稿</h2>
+    <h2>通知：担当チャネルへ自動投稿<span class="bg bg-int">ボタンが押せます</span></h2>
     <p>送信から数秒で、担当チームのチャネルに依頼カードが届きます。誰も転記していません。優先度「高」の依頼は担当者へのメンションが付きます。</p>
     <div class="tools"><span class="tool">Microsoft Teams</span><span class="tool">Power Automate</span></div>
+    <div class="eff">
+      <div><b>なくなる作業</b><span><s>「誰が拾ったか」の確認・進捗の問い合わせ対応</s></span></div>
+      <div><b>削減の見込み</b><span>月20件 × 5分 ＝ <span class="hi">約1.7時間／月</span></span></div>
+      <div><b>効く相手</b><span>受付の一次対応をしている方（開発管理部）</span></div>
+    </div>
   </div>
 
   <div class="tmswrap">
@@ -536,10 +587,17 @@
 <!-- ============ 4. LIST ============ -->
 <section class="view" id="v-list">
   <div class="narr">
-    <h2>台帳：SharePoint リスト</h2>
+    <h2>台帳：SharePoint リスト<span class="bg bg-int">操作できます</span></h2>
     <p>Excel台帳の置き換えです。依頼番号は自動採番、同時編集・変更履歴・権限管理が標準で効きます。ステータスを変更すると、次のダッシュボードの数字が動きます。</p>
     <div class="tools"><span class="tool">SharePoint リスト</span><span class="tool">標準ライセンス</span><span class="tool">脱・個人Excel</span></div>
+    <div class="eff">
+      <div><b>なくなる作業</b><span><s>Excel台帳への転記</s>／<s>版の管理・ファイルの所在確認</s></span></div>
+      <div><b>削減の見込み</b><span>転記2.8時間 ＋ 版管理2.0時間 ＝ <span class="hi">約4.8時間／月</span></span></div>
+      <div><b>効く相手</b><span>台帳を抱えている担当者（属人化の解消）</span></div>
+    </div>
   </div>
+
+  <div class="fillcap" id="fillcap" style="display:none; margin:0 0 12px"></div>
 
   <div class="app">
     <div class="apphead">
@@ -561,7 +619,8 @@
       <span class="chip" data-f="未対応">未対応のみ</span>
       <span class="chip" data-f="期限">期限が近い・超過</span>
       <span class="chip" data-f="高">優先度 高</span>
-      <span class="cnt" id="listcnt"></span>
+      <button class="replay" id="replayBtn" onclick="playFill()">⚡ 自動入力を再生</button>
+      <span class="cnt" id="listcnt" style="margin-left:14px"></span>
     </div>
     <div style="overflow-x:auto">
       <table style="min-width:1020px">
@@ -585,9 +644,14 @@
 <!-- ============ 5. FLOW ============ -->
 <section class="view" id="v-flow">
   <div class="narr">
-    <h2>自動化：フローの中身</h2>
+    <h2>自動化：フローの中身<span class="bg bg-int">ブロックがクリックできます</span></h2>
     <p>ここまでの動きを作っている本体です。ブロックをクリックすると設定が開きます。<b>コードは1行もありません</b> — この画面をご担当者が読めて直せる状態が、内製化のゴールです。</p>
     <div class="tools"><span class="tool">Power Automate</span><span class="tool">標準コネクタのみ</span><span class="tool">構築 約2時間</span></div>
+    <div class="eff">
+      <div><b>なくなる作業</b><span><s>催促メールの作成・送信</s>／<s>期限の見張り</s></span></div>
+      <div><b>削減の見込み</b><span>月30回 × 5分 ＝ <span class="hi">約2.5時間／月</span></span></div>
+      <div><b>効く相手</b><span>催促する側と、される側の両方（心理的な負担が消えます）</span></div>
+    </div>
   </div>
 
   <div class="flowcanvas">
@@ -717,9 +781,14 @@
 <!-- ============ 6. BI ============ -->
 <section class="view" id="v-bi">
   <div class="narr">
-    <h2>可視化：ダッシュボード</h2>
+    <h2>可視化：ダッシュボード<span class="bg bg-view">④の変更が反映されます</span></h2>
     <p>台帳がそのままデータソースになるので、集計作業は発生しません。前の画面でステータスを変えた結果がここに反映されています。この画面が、上申資料に貼る「効果の証拠」になります。</p>
     <div class="tools"><span class="tool">Power BI</span><span class="tool">自動更新</span><span class="tool">手作業の集計ゼロ</span></div>
+    <div class="eff">
+      <div><b>なくなる作業</b><span><s>月次の集計・レポート作成</s></span></div>
+      <div><b>削減の見込み</b><span>半日 → 0 ＝ <span class="hi">約4.0時間／月</span></span></div>
+      <div><b>効く相手</b><span>報告する方と、報告を待っている方</span></div>
+    </div>
   </div>
 
   <div class="bihead">
@@ -813,11 +882,67 @@
   </div>
 </section>
 
+<!-- ============ 7. SUMMARY ============ -->
+<section class="view" id="v-sum">
+  <div class="narr">
+    <h2>まとめ：どの機能が、何を効率化するのか<span class="bg bg-view">表示のみ</span></h2>
+    <p>この1つの業務（依頼の受付〜進捗管理）について、機能ごとに何の作業が無くなるかを整理しました。数字はすべて「月42件の依頼」を前提にした試算です。</p>
+    <div class="tools"><span class="tool">1業務・1部署あたりの効果</span><span class="tool">人件費単価 3,000円／時で換算</span></div>
+  </div>
+
+  <div class="app">
+    <div style="overflow-x:auto">
+      <table style="min-width:900px">
+        <thead>
+          <tr><th>機能</th><th>無くなる作業</th><th>計算の根拠</th><th style="text-align:center">月あたり</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Forms</b>（受付）</td><td>記入不備の差し戻し・内容の聞き直し</td><td>月13件（不備3割）× 8分</td><td style="text-align:center">1.7 時間</td></tr>
+          <tr><td><b>Power Automate</b>（採番・登録）</td><td>Excel台帳への転記</td><td>月42件 × 4分</td><td style="text-align:center">2.8 時間</td></tr>
+          <tr><td><b>Teams 通知</b></td><td>「誰が拾ったか」の確認・進捗の問い合わせ対応</td><td>月20件 × 5分</td><td style="text-align:center">1.7 時間</td></tr>
+          <tr><td><b>Power Automate</b>（期限リマインド）</td><td>催促メールの作成・送信</td><td>月30回 × 5分</td><td style="text-align:center">2.5 時間</td></tr>
+          <tr><td><b>SharePoint リスト</b></td><td>版の管理・最新ファイルの所在確認</td><td>「どれが最新か」が無くなる</td><td style="text-align:center">2.0 時間</td></tr>
+          <tr><td><b>Power BI</b></td><td>月次の集計・レポート作成</td><td>半日 → 0</td><td style="text-align:center">4.0 時間</td></tr>
+          <tr style="background:#fff2cc"><td><b>合計</b></td><td></td><td></td><td style="text-align:center"><b>14.7 時間</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sumtot">
+    <div class="kpi" style="border:1px solid var(--border2)">
+      <div class="lb">削減時間</div>
+      <div class="vl">14.7<span class="un">時間／月</span></div>
+      <div class="dt">年間 約176時間</div>
+    </div>
+    <div class="kpi" style="border:1px solid var(--border2)">
+      <div class="lb">金額換算（@3,000円／時）</div>
+      <div class="vl">約53<span class="un">万円／年</span></div>
+      <div class="dt">この1業務・1部署のみで</div>
+    </div>
+    <div class="kpi" style="border:1px solid var(--border2)">
+      <div class="lb">リードタイム</div>
+      <div class="vl">8.5<span class="un">→ 3.2日</span></div>
+      <div class="dt good">依頼元が体感できる変化</div>
+    </div>
+  </div>
+
+  <div class="app" style="padding:15px 18px">
+    <div style="font-size:13px; line-height:1.8">
+      <b>この数字の読み方</b><br>
+      上の 14.7時間／月 は、<b>依頼受付という1つの業務、1つの部署だけ</b>の数字です。金額に換算すると年53万円で、投資判断の材料としては小さく見えます。<br>
+      効果が積み上がるのは、<b>この型を他の業務・他の部署へ展開したとき</b>です。申請・承認、点検記録、報告書作成なども同じ構造（受付 → 台帳 → 通知 → 可視化）なので、社内で2〜3名が作れるようになれば、横展開にかかるのはほぼ人件費だけになります。<br>
+      <span style="color:var(--sub)">※ 金額よりも、リードタイム 8.5日 → 3.2日 の方が現場には伝わります。依頼を出す側の「待たされる感」が変わる部分です。</span>
+    </div>
+  </div>
+</section>
+
 </div>
 
 <div class="footnav">
   <button id="prevBtn" onclick="step(-1)">← 前へ</button>
   <span class="ttl" id="footTtl"></span>
+  <span class="hint">←→ キーでも移動できます</span>
   <button class="pri" id="nextBtn" onclick="step(1)">次へ →</button>
 </div>
 
@@ -834,7 +959,8 @@ const VIEWS = [
   {id:'teams',  no:'3', nav:'Teams通知',            ttl:'通知：担当チャネルへ自動投稿'},
   {id:'list',   no:'4', nav:'台帳（リスト）',       ttl:'台帳：SharePoint リスト'},
   {id:'flow',   no:'5', nav:'フローの中身',         ttl:'自動化：Power Automate のフロー'},
-  {id:'bi',     no:'6', nav:'ダッシュボード',       ttl:'可視化：Power BI ダッシュボード'}
+  {id:'bi',     no:'6', nav:'ダッシュボード',       ttl:'可視化：Power BI ダッシュボード'},
+  {id:'sum',    no:'7', nav:'効率化のまとめ',       ttl:'まとめ：どの機能が何を効率化するか'}
 ];
 let cur = 0;
 
@@ -860,6 +986,7 @@ function go(id){
   nb.disabled = (i===VIEWS.length-1);
   nb.textContent = (i===VIEWS.length-1) ? 'デモ終了' : '次へ →';
   window.scrollTo({top:0, behavior:'smooth'});
+  if(id === 'list' && requests.some(x=>x.isNew && !x.played)) setTimeout(playFill, 500);
 }
 function step(d){ const n = cur+d; if(n>=0 && n<VIEWS.length) go(VIEWS[n].id); }
 document.addEventListener('keydown', e=>{
@@ -906,18 +1033,20 @@ function renderList(){
     shown++;
     const tr = document.createElement('tr');
     if(r.isNew) tr.className = 'new';
-    tr.innerHTML =
-      '<td><a class="lnk" href="#" onclick="return false">'+r.no+'</a>'+(r.isNew?' <span class="pill p-new">新規</span>':'')+'</td>'+
-      '<td>'+r.kind+'</td>'+
-      '<td>'+r.subj+'</td>'+
-      '<td>'+r.dept+'</td>'+
-      '<td>'+r.rc+'</td>'+
-      '<td>'+di.html+'</td>'+
-      '<td><span class="pill '+(r.pri==='高'?'p-high':'p-mid')+'">'+r.pri+'</span></td>'+
-      '<td><select class="st" data-i="'+i+'">'+
+    const cells = [
+      '<a class="lnk" href="#" onclick="return false">'+r.no+'</a>'+(r.isNew?' <span class="pill p-new">新規</span>':''),
+      r.kind, r.subj, r.dept, r.rc, di.html,
+      '<span class="pill '+(r.pri==='高'?'p-high':'p-mid')+'">'+r.pri+'</span>',
+      '<select class="st" data-i="'+i+'">'+
         ['受付済','対応中','完了','保留'].map(s=>'<option'+(s===r.st?' selected':'')+'>'+s+'</option>').join('')+
-      '</select></td>'+
-      '<td><div class="who-cell"><span class="av">'+(r.who==='未割当'?'—':r.who.slice(0,1))+'</span>'+r.who+'</div></td>';
+      '</select>',
+      '<div class="who-cell"><span class="av">'+(r.who==='未割当'?'—':r.who.slice(0,1))+'</span>'+r.who+'</div>'
+    ];
+    const lim = (r.fill === undefined) ? cells.length : r.fill;
+    tr.innerHTML = cells.map((c,ci)=>{
+      if(ci < lim) return '<td'+(ci === lim-1 && r.fill !== undefined ? ' class="flash"' : '')+'>'+c+'</td>';
+      return '<td class="pend"></td>';
+    }).join('');
     body.appendChild(tr);
   });
   document.getElementById('listcnt').textContent = shown+' 件を表示（全 '+requests.length+' 件）';
@@ -962,6 +1091,48 @@ function renderBI(){
     '#8661c5 '+a2+'deg '+a3+'deg, #c8c6c4 '+a3+'deg 360deg)';
 }
 
+/* ============ 自動入力の再生（台帳のセルが埋まる様子） ============ */
+let filling = false;
+function ensureNewRow(){
+  let r = requests.find(x=>x.isNew);
+  if(r) return r;
+  const no = 'REQ-2026-0'+(seq++);
+  r = {no, kind:'仕様確認', subj:'部材Bの供給元変更に伴う仕様確認', dept:'製造部', rc:'8/19',
+       due:'2026-08-28', pri:'中', st:'受付済', who:'未割当', isNew:true};
+  requests.unshift(r);
+  return r;
+}
+function playFill(){
+  if(filling) return;
+  const r = ensureNewRow();
+  r.played = true;
+  filling = true;
+  r.fill = 0;
+  const btn = document.getElementById('replayBtn');
+  const cap = document.getElementById('fillcap');
+  btn.disabled = true;
+  cap.style.display = 'flex';
+  cap.className = 'fillcap';
+  cap.innerHTML = '<b>⚡ フロー実行中…</b>　Power Automate が台帳に書き込んでいます（人がキーを打った回数：0）';
+  renderList(); renderBI();
+  const labels = ['依頼No を採番','依頼区分','件名','依頼元','受付日','希望期限','優先度','ステータス（受付済）','担当者'];
+  const timer = setInterval(()=>{
+    r.fill++;
+    renderList();
+    cap.innerHTML = '<b>⚡ 書き込み中…</b>　'+labels[r.fill-1]+' を入力しました　（'+r.fill+' ／ 9 項目）';
+    if(r.fill >= labels.length){
+      clearInterval(timer);
+      delete r.fill;
+      filling = false;
+      btn.disabled = false;
+      renderList(); renderBI();
+      cap.className = 'fillcap done';
+      cap.innerHTML = '<b>✓ 9項目を自動入力しました（所要 3秒）</b>　'+
+        '同じ内容を手で転記すると1件あたり約4分。月42件なら 2.8時間／月がそのまま消えます。';
+    }
+  }, 300);
+}
+
 /* ============ フォーム送信 ============ */
 let seq = 143;
 document.querySelectorAll('#f-pri span').forEach(s=>{
@@ -975,7 +1146,7 @@ document.getElementById('f-send').onclick = ()=>{
   const pri   = document.querySelector('#f-pri span.on').dataset.v;
   const no    = 'REQ-2026-0'+(seq++);
 
-  requests.forEach(r=>r.isNew = false);
+  requests.forEach(r=>{ r.isNew = false; r.played = false; });
   requests.unshift({no, kind, subj:title, dept, rc:'8/19', due, pri, st:'受付済', who:'未割当', isNew:true});
   renderList(); renderBI();
 
